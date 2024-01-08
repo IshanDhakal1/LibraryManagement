@@ -124,12 +124,12 @@ def login():
     print("1. Librarian Login")
     print("2. Student Login")
     print("0. Exit")
-    log= input(" enter your choice")
+    log= input(" enter your choice: ")
     if(log =='1'):
         finLogin='1'
     elif(log=='2'):
-        nameChk= input("Enter Student Name")
-        idChk= input("Enter Student id")
+        nameChk= input("Enter Student Name: ")
+        idChk= input("Enter Student id: ")
         cursor.execute("select count(*) from students where name= ? AND id= ?",(nameChk,idChk))
         count=cursor.fetchone()[0]
         if(count>=1):
@@ -157,7 +157,7 @@ def choices(chk):
         print("7. Lend Books")
         print("8. Return Books")
         print("0. Exit")
-        choice= input("Enter your choice")
+        choice= input("Enter your choice: ")
         return choice
 
     elif(chk=='2'):
@@ -165,7 +165,7 @@ def choices(chk):
         print("2. Take Books")
         print("3. Return Books")
         print("0. Exit")
-        choice= input("Enter your choice")
+        choice= input("Enter your choice: ")
         if(choice=='2'):
             return '7'
         elif(choice=='1'):
