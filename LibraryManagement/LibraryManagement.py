@@ -103,7 +103,7 @@ def lend_book(student_id, book_id, date_borrowed):
     cursor = connection.cursor()
 
     cursor.execute("INSERT INTO lend_records (student_id, book_id, date_borrowed) VALUES (?, ?, ?)", (student_id, book_id, date_borrowed))
-    lend_id= execute("SELECT LAST (id) FROM lend_records;  ")
+    lend_id= cursor.execute("SELECT LAST (id) FROM lend_records;  ")
     connection.commit()
     connection.close()
 
